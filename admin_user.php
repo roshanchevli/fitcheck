@@ -180,8 +180,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <h2 class="text-2xl font-bold text-gray-800">User Management</h2>
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Admin"
-                            class="w-10 h-10 rounded-full">
+
                         <div class="ml-2">
                             <p class="text-sm font-medium">Admin User</p>
                             <p class="text-xs text-gray-500">Administrator</p>

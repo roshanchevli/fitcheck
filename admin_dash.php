@@ -166,14 +166,9 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="bg-white rounded-lg shadow p-4 mb-6 flex justify-between items-center">
                 <h2 class="text-2xl font-bold text-gray-800">Admin Dashboard</h2>
                 <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <i class="fas fa-bell text-gray-500"></i>
-                        <span
-                            class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">3</span>
-                    </div>
+
                     <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Admin"
-                            class="w-10 h-10 rounded-full">
+
                         <div class="ml-2">
                             <p class="text-sm font-medium">Admin User</p>
                             <p class="text-xs text-gray-500">Administrator</p>
