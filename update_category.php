@@ -295,7 +295,6 @@ if (isset($_POST['btnsubmit'])) {
     } else {
 
         include 'connect.php';
-
         $query = "UPDATE `tbl_category` SET `cat_name` = '$catname', `cat_pic` = '$name' WHERE `tbl_category`.`cat_id` = $id;";
 
         $result = mysqli_query($con, $query);
