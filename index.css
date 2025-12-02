@@ -1,0 +1,114 @@
+
+        
+.hero-section {
+    background: linear-gradient(rgba(78, 114, 223, 0.361), rgba(78, 114, 223, 0.372)),url('assest/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.feature-card {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.form-container {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.section-title {
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #4e73df;
+}
+
+@media (min-width: 768px) {
+    .section-title:after {
+        left: 0;
+        transform: translateX(0);
+    }
+}
+ .feature-card {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Health Tracking Card */
+.health-track-card {
+    /* REPLACE WITH YOUR IMAGE PATH */
+    /* background-image: url('assest/healthtrack.png'); */
+    border-top: 4px solid #f5576c;
+}
+
+/* Goal Setting Card */
+.goal-setting-card {
+    /* REPLACE WITH YOUR IMAGE PATH */
+    /* background-image: url('images/goal-setting-bg.jpg'); */
+    border-top: 4px solid #4facfe;
+}
+
+/* Progress Analytics Card */
+.progress-analytics-card {
+    /* REPLACE WITH YOUR IMAGE PATH */
+    /* background-image: url('images/progress-analytics-bg.jpg'); */
+    border-top: 4px solid #43e97b;
+}
+
+.content-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .content-container {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.02);
+}
+
+.icon-container {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-container {
+    transform: scale(1.1);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 2px;
+}
