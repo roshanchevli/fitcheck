@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2025 at 10:37 AM
+-- Generation Time: Dec 03, 2025 at 01:24 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -44,7 +44,9 @@ CREATE TABLE `messages` (
 INSERT INTO `messages` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `status`) VALUES
 (1, 'Roshan Chevli', 'john@gmail.com', 'dsfs', 'dhgfhgffgh', '2025-12-02 09:33:07', 'unread'),
 (2, 'Roshan Chevli', 'chevlir115@gmail.com', 'dsfs', 'hello this is msg for chveking purspiose\r\n', '2025-12-02 09:34:44', 'unread'),
-(3, 'Roshan Chevli', 'chevlir115@gmail.com', 'dsfs', 'hello this is msg for chveking purspiose\r\n', '2025-12-02 09:35:09', 'unread');
+(3, 'Roshan Chevli', 'chevlir115@gmail.com', 'dsfs', 'hello this is msg for chveking purspiose\r\n', '2025-12-02 09:35:09', 'unread'),
+(4, 'ruchi', 'ruchi@gmial.com', 'update your cart secction', 'asjakdjskd skdjfks s jskdjs', '2025-12-02 09:44:07', 'unread'),
+(5, 'ruchi', 'ruchi@gmial.com', 'update your cart secction', 'asjakdjskd skdjfks s jskdjs', '2025-12-02 09:51:38', 'unread');
 
 -- --------------------------------------------------------
 
@@ -90,16 +92,11 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`oid`, `pid`, `pname`, `pic`, `status`, `qty`, `price`, `username`) VALUES
-(23, 8, 'roshan', 'images/68c9b29c4a434.jpg', 1, 2, 30, 'Roshan'),
-(24, 6, 'roshan', 'images/68c9ae0a6d9b3.jpg', 1, 2, 20, 'Roshan'),
-(25, 15, 'Protein', 'images/68caf2026af30.jpg', 1, 4, 30, 'Roshan'),
-(26, 22, 'Gym Bottom', 'images/68caf94a27cad.png', 1, 2, 10, 'Roshan'),
 (27, 20, 'Medical alert systems', 'images/68caf6b519bcc.jpg', 1, 3, 30, 'raj'),
-(28, 25, 'qwe', 'images/68cb9c86b8585.png', 1, 1, 23, 'Roshan'),
-(29, 24, 'Gym short', 'images/68cafb5583533.jpg', 1, 8, 20, 'Roshan'),
-(30, 24, 'Gym short', 'images/68cafb5583533.jpg', 1, 12, 20, 'Roshan'),
-(32, 23, 'Gym shoes', 'images/68caf9b4ae288.jpg', 1, 4, 50, 'Roshan'),
-(33, 24, 'Gym short', 'images/68cafb5583533.jpg', 0, 1, 20, 'Roshan');
+(38, 10, 'Elliptical Trainer', 'images/68caebcf84401.png', 1, 3, 455, 'Roshan'),
+(39, 22, 'Gym Bottom', 'images/68caf94a27cad.png', 1, 1, 10, 'Roshan'),
+(40, 16, 'protein capsule', 'images/68caf2e79697c.jpg', 1, 1, 15, 'Roshan'),
+(41, 21, 'Gym tshirt', 'images/68caf8200a18f.png', 1, 5, 10, 'Roshan');
 
 -- --------------------------------------------------------
 
@@ -161,7 +158,8 @@ INSERT INTO `tbl_user` (`user_id`, `username`, `password`, `email`, `mobileno`) 
 (7, 'sdfsdfsdf', '123qwe', 'chevlir115@gmail.com', '1234567890'),
 (8, 'ruchi', '123qwe', 'ruchi@gmail.com', '1234567890'),
 (9, 'raj', 'Raj123', 'raj@gmail.com', '1234567890'),
-(10, 'Roshan', '123qwe', 'john@gmail.com', '1234567890');
+(10, 'Roshan', '123qwe', 'john@gmail.com', '1234567890'),
+(11, 'jay', 'ryHF9nSs7vB4Xcc', 'jay@gmail.com', '8822993399');
 
 -- --------------------------------------------------------
 
@@ -237,7 +235,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -249,7 +247,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
@@ -261,7 +259,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
