@@ -315,6 +315,9 @@ session_start();
                         <a class="nav-item text-white font-medium hover:text-gray-200" href="cart.php">
                             <i class="fas fa-shopping-cart mr-1"></i> Cart
                         </a>
+                        <a class="nav-item text-white font-medium hover:text-gray-200" href="myorder.php">
+                            <i class="fa-solid fa-truck mr-1"></i> myorders
+                        </a>
                         <a class="nav-item text-white font-medium hover:text-gray-200" href="index.php">
                             <?php echo $_SESSION['user_name'] ?>
                         </a>

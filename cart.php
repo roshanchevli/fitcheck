@@ -7,12 +7,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 include 'connect.php';
 
-// Get cart items for the current user with status 0 (in cart)
 $username = $_SESSION['user_name'];
 $query = "SELECT * FROM tbl_order WHERE username = '$username' AND status = 0 ORDER BY oid DESC";
 $result = mysqli_query($con, $query);
 
-// Calculate total
 $total = 0;
 $cart_items = [];
 while ($row = mysqli_fetch_assoc($result)) {
@@ -20,18 +18,15 @@ while ($row = mysqli_fetch_assoc($result)) {
     $total += $row['price'] * $row['qty'];
 }
 
-// Handle quantity updates
 if (isset($_POST['update_quantity'])) {
     $oid = $_POST['oid'];
     $new_qty = $_POST['qty'];
 
-    // Get the product price
     $price_query = "SELECT price FROM tbl_order WHERE oid = $oid";
     $price_result = mysqli_query($con, $price_query);
     $price_row = mysqli_fetch_assoc($price_result);
     $price = $price_row['price'];
 
-    // Update quantity and recalculate price
     $update_query = "UPDATE tbl_order SET qty = $new_qty WHERE oid = $oid";
     mysqli_query($con, $update_query);
 
@@ -39,7 +34,6 @@ if (isset($_POST['update_quantity'])) {
     exit;
 }
 
-// Handle item removal
 if (isset($_GET['remove'])) {
     $oid = $_GET['remove'];
     $delete_query = "DELETE FROM tbl_order WHERE oid = $oid";
@@ -49,9 +43,7 @@ if (isset($_GET['remove'])) {
     exit;
 }
 
-// Handle checkout
 if (isset($_POST['checkout'])) {
-    // Update status of all items to 1 (purchased)
     $checkout_query = "UPDATE tbl_order SET status = 1 WHERE username = '$username' AND status = 0";
     mysqli_query($con, $checkout_query);
 
