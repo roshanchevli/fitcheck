@@ -26,7 +26,7 @@ include 'header.php';
                         class="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
                         Learn More
                     </a>
-                    <a href="#"
+                    <a href="contact.php"
                         class="px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition duration-300">
                         Contact Us
                     </a>
