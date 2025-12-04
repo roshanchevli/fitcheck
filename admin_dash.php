@@ -1,6 +1,11 @@
 <?php
 include 'connect.php';
 
+// Count contact messages (add this query)
+$msg_query = "SELECT * FROM messages WHERE status='unread'";
+$result_msg = mysqli_query($con, $msg_query);
+$count_unread_msg = mysqli_num_rows($result_msg);
+
 $c_query = "SELECT * FROM tbl_category";
 $p_query = "SELECT * FROM tbl_product";
 $u_query = "SELECT * FROM tbl_user";
@@ -149,6 +154,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <span class="nav-text ml-3">Orders</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
 
@@ -166,9 +172,16 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="bg-white rounded-lg shadow p-4 mb-6 flex justify-between items-center">
                 <h2 class="text-2xl font-bold text-gray-800">Admin Dashboard</h2>
                 <div class="flex items-center space-x-4">
+                    <!-- Add Contact Messages Button in Header -->
+                    <?php if ($count_unread_msg > 0): ?>
+                        <a href="admin_contact.php"
+                            class="flex items-center bg-red-100 text-red-600 px-4 py-2 rounded-lg hover:bg-red-200 transition">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span class="font-semibold"><?php echo $count_unread_msg; ?> Unread Messages</span>
+                        </a>
+                    <?php endif; ?>
 
                     <div class="flex items-center">
-
                         <div class="ml-2">
                             <p class="text-sm font-medium">Admin User</p>
                             <p class="text-xs text-gray-500">Administrator</p>
@@ -176,6 +189,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </div>
                 </div>
             </div>
+
             <!-- Stats Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="stat-card bg-white rounded-lg shadow p-6 transition duration-300">
@@ -188,7 +202,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <h3 class="text-2xl font-bold"><?= $count_users ?></h3>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="stat-card bg-white rounded-lg shadow p-6 transition duration-300">
@@ -201,8 +214,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <h3 class="text-2xl font-bold"><?= $count_prod ?></h3>
                         </div>
                     </div>
-
                 </div>
+
                 <div class="stat-card bg-white rounded-lg shadow p-6 transition duration-300">
                     <div class="flex items-center">
                         <div class="p-3 rounded-full bg-green-100 text-secondary">
@@ -213,7 +226,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <h3 class="text-2xl font-bold"><?= $count_cat ?></h3>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="stat-card bg-white rounded-lg shadow p-6 transition duration-300">
@@ -226,9 +238,27 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <h3 class="text-2xl font-bold"><?= $count_order ?></h3>
                         </div>
                     </div>
-
                 </div>
 
+                <!-- Add Contact Messages Stats Card -->
+                <div class="stat-card bg-white rounded-lg shadow p-6 transition duration-300">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-500">Unread Messages</p>
+                            <h3 class="text-2xl font-bold"><?= $count_unread_msg ?></h3>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="admin_contact.php"
+                            class="text-purple-600 hover:text-purple-800 text-sm font-medium flex items-center">
+                            <span>View Messages</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Recent Activities and Content Area -->
@@ -237,7 +267,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="lg:col-span-2 bg-white rounded-lg shadow p-6">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="text-lg font-bold">Recent Orders</h3>
-                        <a href="#" class="text-primary text-sm">View All</a>
+                        <a href="admin_order.php" class="text-primary text-sm">View All</a>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200">
@@ -263,7 +293,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <tbody class="bg-white divide-y divide-gray-200">
                                 <?php if (empty($arr)): ?>
                                     <tr>
-                                        <td colspan="4">No active orders found</td>
+                                        <td colspan="5" class="px-6 py-4 text-center text-gray-500">No active orders found
+                                        </td>
                                     </tr>
                                 <?php else: ?>
                                     <?php
@@ -285,7 +316,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                                 <?php echo htmlspecialchars($order['username']); ?>
                                             </td>
-
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
@@ -313,9 +343,19 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <i class="fas fa-users-cog mr-3"></i>
                             <span>User Management</span>
                         </a>
+                        <!-- Add Contact Messages to Quick Actions -->
+                        <a href="admin_contact.php"
+                            class="flex items-center p-3 bg-purple-50 text-purple-600 rounded-lg hover:bg-purple-100 transition">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>Contact Messages</span>
+                            <?php if ($count_unread_msg > 0): ?>
+                                <span
+                                    class="ml-auto bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                                    <?php echo $count_unread_msg; ?>
+                                </span>
+                            <?php endif; ?>
+                        </a>
                     </div>
-
-
                 </div>
             </div>
         </div>
