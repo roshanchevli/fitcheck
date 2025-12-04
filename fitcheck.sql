@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2025 at 01:24 PM
+-- Generation Time: Dec 04, 2025 at 07:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -42,11 +42,12 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `status`) VALUES
-(1, 'Roshan Chevli', 'john@gmail.com', 'dsfs', 'dhgfhgffgh', '2025-12-02 09:33:07', 'unread'),
-(2, 'Roshan Chevli', 'chevlir115@gmail.com', 'dsfs', 'hello this is msg for chveking purspiose\r\n', '2025-12-02 09:34:44', 'unread'),
+(1, 'Roshan Chevli', 'john@gmail.com', 'dsfs', 'dhgfhgffgh', '2025-12-02 09:33:07', 'read'),
+(2, 'Roshan Chevli', 'chevlir115@gmail.com', 'dsfs', 'hello this is msg for chveking purspiose\r\n', '2025-12-02 09:34:44', 'read'),
 (3, 'Roshan Chevli', 'chevlir115@gmail.com', 'dsfs', 'hello this is msg for chveking purspiose\r\n', '2025-12-02 09:35:09', 'unread'),
-(4, 'ruchi', 'ruchi@gmial.com', 'update your cart secction', 'asjakdjskd skdjfks s jskdjs', '2025-12-02 09:44:07', 'unread'),
-(5, 'ruchi', 'ruchi@gmial.com', 'update your cart secction', 'asjakdjskd skdjfks s jskdjs', '2025-12-02 09:51:38', 'unread');
+(6, 'raj', 'raj@gmail.com', 'product return', 'i want to return my product ', '2025-12-04 17:58:02', 'unread'),
+(7, 'vanshita', 'vanshita@gmail.com', 'about shipping date', 'i want to know when will my order delivered?\r\n', '2025-12-04 18:00:42', 'unread'),
+(8, 'ujval', 'ujval@gmail.com', 'product replacement', 'i want to replcae my tshirt', '2025-12-04 18:07:58', 'unread');
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
